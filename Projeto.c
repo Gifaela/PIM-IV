@@ -23,7 +23,7 @@ int covid()
 		break;
 
 	case '2':
-		printf("Encaminhe para a ala não covid");
+		printf("Encaminhe para a ala não covid\n");
 		break;
 
 	default:
@@ -50,6 +50,7 @@ int login()
 		if (strcmp(user, user1) == 0 && strcmp(password, password1) == 0)
 		{
 			printf("\n\nLOGADO!\n\n");
+			cadastro();
 		}
 		else
 		{
@@ -68,7 +69,7 @@ int cadastro()
 	system("cls");
 
 	printf("O que deseja? \n");
-	printf("[1]Cadastrar \n[2]Visualizar \n[3]Deletar \n[4]Finalizar \n\nResposta: ");
+	printf("[1]Cadastrar \n[2]Visualizar \n[3]Finalizar \n\nResposta: ");
 	scanf("%c", &res);
 
 	switch (res)
@@ -82,12 +83,7 @@ int cadastro()
 		break;
 
 	case '3':
-		printf("Deletar paciente: \n\n");
-		break;
-
-	case '4':
 		printf("Operação finalizada!! \n\n");
-		system("pause");
 		break;
 
 	default:
@@ -114,16 +110,16 @@ No *inicio()
 No *PostPaciente()
 {
 	char temp[80];
-	No *NovoLivro = (No *)malloc(sizeof(No));
+	No *NovoPaciente = (No *)malloc(sizeof(No));
 	if (primeiro == (No *)NULL)
-		primeiro = atual = NovoLivro;
+		primeiro = atual = NovoPaciente;
 	else
 	{
 		atual = primeiro;
 		while (atual->proximo != (No *)NULL)
 			atual = atual->proximo;
-		atual->proximo = NovoLivro;
-		atual = NovoLivro;
+		atual->proximo = NovoPaciente;
+		atual = NovoPaciente;
 	}
 	system("cls");
 	printf("Digite Nome: ");
@@ -180,7 +176,6 @@ int main()
 
 	printf("\t\t\t\t\t Hospital PIM IV \n");
 	covid();
-	cadastro();
 	printf("-------------------------------------------------------------------------------\n");
 	printf("                           FIM                                  \n");
 	printf("-------------------------------------------------------------------------------");
