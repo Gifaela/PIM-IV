@@ -172,8 +172,8 @@ int chamaPrintPaciente()
 
 int main()
 {
-	setlocale(LC_ALL, "#pragma endregionPortuguese");
-
+	setlocale(LC_ALL, "Portuguese");
+	
 	printf("\t\t\t\t\t Hospital PIM IV \n");
 	covid();
 	printf("-------------------------------------------------------------------------------\n");
